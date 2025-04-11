@@ -38,6 +38,7 @@ function NavBar() {
           <Link to="/About" className={menuOpen ? "a open" : "a"}>About</Link>
           <Link to="/Recipes" className={menuOpen ? "a open" : "a"}>Recipes</Link>
           <Link to="/Reviews" className={menuOpen ? "a open" : "a"}>Reviews</Link>
+          <Link to="/Aichat" className={menuOpen ? "a open" : "a"}>Ai chat</Link>
           <div className="chefchoice">
             <Link to={getRandomRecipeLink()} className={menuOpen ? "a open" : "a"}>chef's choice!</Link>
           </div>

@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+@media (max-width: 764px) {
+    .summary {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 #me {
     width: 502px;
     height: 730px;
