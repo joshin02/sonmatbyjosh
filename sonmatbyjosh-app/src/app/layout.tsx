@@ -22,7 +22,7 @@ const josh_handwriting = localFont({
 });
 
 const basicform = localFont({
-  src: "./fonts/basicform2.woff2",
+  src: "./fonts/Basicform2.woff2",
   variable: "--font-basicform",
 });
 
