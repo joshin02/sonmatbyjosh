@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 
-export default function BlogPage() {
+export default function ReviewPage() {
   return (
     <>
       <Header />

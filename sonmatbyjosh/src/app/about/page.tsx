@@ -9,8 +9,8 @@ export default function AboutPage() {
         <section className="about-section">
           <div className="about-all-content">
               <p className="about-greeting">
-              안녕! I'm Josh
-            </p>
+                안녕! I'm Josh
+              </p>
 
             <div className="about-grid">
               <div className="about-image">

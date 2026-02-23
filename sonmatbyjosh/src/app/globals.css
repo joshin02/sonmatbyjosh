@@ -117,8 +117,8 @@ a {
 }
 
 .home-select {
-  width: 20rem;
-  height: 4.125rem;
+  width: 22rem;
+  height: 3.125rem;
   font-size: 2.25em;
   letter-spacing: 0.0625em;
   border-radius: 10px;
@@ -170,7 +170,7 @@ a {
   .home-select {
     width: 140px; /* smaller dropdown for narrow screens */
     font-size: 0.8rem;
-    height: 3rem;
+    height: 2.5rem;
     padding: 0.3rem 0.5rem;
   }
 
@@ -266,6 +266,7 @@ a {
 
 .about-greeting {
   margin-bottom: 1rem;
+  font-size: 1.5rem;
   font-family: var(--font-basicform);
 }
 
@@ -631,5 +632,44 @@ a {
 
   .recipe-detail-content h2 {
     font-size: 20px;
+  }
+}
+
+/* =========================
+   Coming Soon styling
+========================= */
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.coming-soon h1 {
+  font-family: var(--font-handwritten);
+  font-size: 8rem;
+  font-weight: 400;
+}
+
+.coming-soon img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 430px) {
+  .coming-soon {
+    padding: 1.5rem 1rem;
+  }
+
+  .coming-soon h1 {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .coming-soon img {
+    max-width: 150px;
   }
 }

@@ -1,14 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
 
   function handleNavChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const value = e.target.value;
-    if (value) {
+    if (value && value !== pathname) {
       router.push(value);
     }
   }
@@ -24,13 +25,10 @@ export default function Header() {
       {/* Select Nav */}
       <select
         className="home-select"
-        defaultValue=""
+        value={pathname}
         onChange={handleNavChange}
         aria-label="Site navigation"
       >
-        <option value="" disabled>
-          navigate
-        </option>
         <option value="/recipes">recipes</option>
         <option value="/reviews">reviews</option>
         <option value="/about">about</option>
