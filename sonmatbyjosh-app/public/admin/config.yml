@@ -1,15 +1,17 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: main   # or your default GitHub branch
+  repo: joshin02/sonmatbyjosh  # only required for Git Gateway
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "test"
-    label: "Test"
-    files:
-      - name: "hello"
-        label: "Hello"
-        file: "content/hello.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
