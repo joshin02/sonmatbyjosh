@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.15.8",
     "lucide-react": "^0.562.0",
     "react-icons": "^5.5.0"
   }
