@@ -12,6 +12,13 @@
       if (window.netlifyIdentity) {
         window.netlifyIdentity.init();
       }
+
+      // Check if URL has invite token
+      const token = window.location.hash.match(/invite_token=([^&]+)/);
+      if (token) {
+      // Redirect to /admin with the token preserved
+      window.location.href = '/admin' + window.location.hash;
+      }
     </script>
 
     <!-- Decap CMS -->
