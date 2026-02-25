@@ -3,40 +3,31 @@ import RecipeDetailClient from "@/components/recipe-detail-client";
 import { getAllRecipes, getRecipeBySlug } from "@/lib/recipes";
 import { notFound } from "next/navigation";
 
-// 🔥 Pre-generate all recipe routes at build time
 export function generateStaticParams() {
   const recipes = getAllRecipes();
-
-  return recipes.map((recipe) => ({
-    slug: recipe.slug,
-  }));
+  return recipes.map((r) => ({ slug: r.slug }));
 }
 
-export default function RecipeDetailPage({
+export default async function RecipeDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const recipe = getRecipeBySlug(params.slug);
+  const { slug } = await params;
 
-  // If no markdown file exists for this slug → 404 page
-  if (!recipe) {
-    return notFound();
-  }
+  const recipe = getRecipeBySlug(slug);
+  if (!recipe) return notFound();
 
   return (
     <>
       <Header />
-
       <main className="recipe-detail-page">
-        {/* Brown intro/story section from CMS */}
         <section className="recipes-intro card">
           <div className="recipes-intro-inner">
             <p>{recipe.intro || "Recipe story coming soon."}</p>
           </div>
         </section>
 
-        {/* Pass full CMS recipe object to client component */}
         <RecipeDetailClient recipe={recipe} />
       </main>
     </>
