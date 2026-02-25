@@ -148,7 +148,7 @@ a {
   margin: 3rem auto 0;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .home-hero {
     padding-top: 2rem;
   }
@@ -227,7 +227,7 @@ a {
   width: auto;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .site-header {
     padding: 0.75rem 1rem;
   }
@@ -598,7 +598,7 @@ a {
    MOBILE (iPhone 15–17)
 ========================= */
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .recipe-detail-hero {
     padding: 32px 16px;
   }
@@ -659,7 +659,7 @@ a {
   height: auto;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 440px) {
   .coming-soon {
     padding: 1.5rem 1rem;
   }
