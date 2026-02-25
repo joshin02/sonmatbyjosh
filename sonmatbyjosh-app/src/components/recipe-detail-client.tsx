@@ -1,17 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-
-type RecipeCard = {
-  slug: string;
-  title: string;
-  image: string;
-};
-
-type Props = {
-  recipe: RecipeCard;
-  allRecipes: RecipeCard[];
-};
+import type { Recipe } from "@/lib/recipes";
 
 const SECTIONS = [
   { key: "pics", label: "pics and vids" },
@@ -21,7 +11,7 @@ const SECTIONS = [
 
 type SectionKey = (typeof SECTIONS)[number]["key"];
 
-export default function RecipeDetailClient({ recipe, allRecipes }: Props) {
+export default function RecipeDetailClient({ recipe }: { recipe: Recipe }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<SectionKey>("pics");
 
@@ -29,9 +19,13 @@ export default function RecipeDetailClient({ recipe, allRecipes }: Props) {
     return SECTIONS.find((s) => s.key === active)?.label ?? "pics and vids";
   }, [active]);
 
+  const media = recipe.media ?? [];
+  const ingredients = recipe.ingredients ?? [];
+  const instructions = recipe.instructions ?? [];
+
   return (
     <>
-      {/* Center dropdown (matches your wireframe) */}
+      {/* Center dropdown */}
       <section className="recipe-detail-nav">
         <div className="recipe-detail-dropdown">
           <button
@@ -68,49 +62,85 @@ export default function RecipeDetailClient({ recipe, allRecipes }: Props) {
 
       {/* Section content */}
       <section className="recipe-detail-body">
+        {/* pics and vids */}
         {active === "pics" && (
           <div className="recipe-detail-pics">
-            {/* Layout-first: reuse your main grid/card look */}
             <div className="recipes-grid recipe-detail-grid">
-              {allRecipes.slice(0, 4).map((r) => (
-                <div key={r.slug} className="recipe-card">
-                  <img src={r.image} alt={r.title} />
-                  <p>{r.title}</p>
+              {media.length === 0 ? (
+                <div className="recipe-detail-empty">
+                  <p>Media coming soon.</p>
                 </div>
-              ))}
+              ) : (
+                media.map((m, idx) => {
+                  if (m.type === "image") {
+                    return (
+                      <div key={idx} className="recipe-card">
+                        <img src={m.src} alt={m.alt ?? recipe.title} />
+                        <p>{recipe.title}</p>
+                      </div>
+                    );
+                  }
+
+                  // video (simple link card for now)
+                  return (
+                    <a
+                      key={idx}
+                      className="recipe-detail-video-card"
+                      href={m.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <div className="recipe-detail-video-inner">
+                        <p className="recipe-detail-video-title">
+                          {m.alt ?? "Video"}
+                        </p>
+                        <p className="recipe-detail-video-url">{m.url}</p>
+                      </div>
+                    </a>
+                  );
+                })
+              )}
             </div>
           </div>
         )}
 
+        {/* ingredients */}
         {active === "ingredients" && (
           <div className="recipe-detail-panel">
             <div className="recipe-detail-box">
-              <h2 className="recipe-detail-title">Black cod</h2>
+              <h2 className="recipe-detail-title">{recipe.title}</h2>
 
               <div className="recipe-detail-text">
-                <p>Green onions (for garnish)</p>
-                <p>Miso Sauce</p>
-                <ul>
-                  <li>White miso</li>
-                  <li>Sake (or mirin)</li>
-                  <li>Maple syrup (or preferred sweetener)</li>
-                </ul>
+                {ingredients.length === 0 ? (
+                  <p>Ingredients coming soon.</p>
+                ) : (
+                  <ul>
+                    {ingredients.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </div>
         )}
 
+        {/* instructions */}
         {active === "instructions" && (
           <div className="recipe-detail-panel">
             <div className="recipe-detail-box">
               <h2 className="recipe-detail-title">Instructions</h2>
 
               <div className="recipe-detail-text">
-                <ol>
-                  <li>Mix the miso sauce ingredients until smooth.</li>
-                  <li>Marinate the cod 24–48 hours (or same day if needed).</li>
-                  <li>Broil until caramelized, then finish with a torch if you want char.</li>
-                </ol>
+                {instructions.length === 0 ? (
+                  <p>Instructions coming soon.</p>
+                ) : (
+                  <ol>
+                    {instructions.map((step, i) => (
+                      <li key={i}>{step}</li>
+                    ))}
+                  </ol>
+                )}
               </div>
             </div>
           </div>

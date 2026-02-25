@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main   # or your default GitHub branch
+  branch: main
   repo: joshin02/sonmatbyjosh  # only required for Git Gateway
 
 media_folder: "sonmatbyjosh-app/public/uploads"
@@ -15,5 +15,32 @@ collections:
     slug: "{{slug}}"
     preview_path: "recipes/{{slug}}"
     fields:
+      # --- Card fields (used on the main recipes page) ---
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Cover Image", name: "image", widget: "image" }
+
+      # --- Detail page fields (used on /recipes/[slug]) ---
+      - { label: "Intro / Story", name: "intro", widget: "text", hint: "Shows in the top brown intro section." }
+
+      - label: "Pics and Vids"
+        name: "media"
+        widget: "list"
+        hint: "Gallery content for the 'pics and vids' dropdown section."
+        summary: "{{fields.type}}"
+        fields:
+          - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
+          - { label: "Image", name: "src", widget: "image", required: false, hint: "Required if type = image" }
+          - { label: "Video URL", name: "url", widget: "string", required: false, hint: "Required if type = video (YouTube/Vimeo/etc)" }
+          - { label: "Alt Text", name: "alt", widget: "string", required: false }
+
+      - label: "Ingredients"
+        name: "ingredients"
+        widget: "list"
+        hint: "Each line becomes a bullet in the Ingredients panel."
+        field: { label: "Item", name: "item", widget: "string" }
+
+      - label: "Instructions"
+        name: "instructions"
+        widget: "list"
+        hint: "Each line becomes a numbered step in the Instructions panel."
+        field: { label: "Step", name: "step", widget: "text" }
