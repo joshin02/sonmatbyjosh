@@ -3,14 +3,14 @@ backend:
   branch: main   # or your default GitHub branch
   repo: joshin02/sonmatbyjosh  # only required for Git Gateway
 
-media_folder: "public/uploads"
+media_folder: "sonmatbyjosh-app/public/uploads"
 public_folder: "/uploads"
 
 collections:
   - name: "recipes"
     label: "Recipes"
     label_singular: "Recipe"
-    folder: "content/recipes"
+    folder: "sonmatbyjosh-app/content/recipes"
     create: true
     slug: "{{slug}}"
     preview_path: "recipes/{{slug}}"
