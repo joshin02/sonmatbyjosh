@@ -1,39 +1,11 @@
-"use client";
-
-import { useState } from "react";
 import Header from "@/components/header";
-
-type Recipe = {
-  id: string;
-  title: string;
-  image: string;
-};
-
-const RECIPES: Recipe[] = [
-  {
-    id: "miso-black-cod",
-    title: "Miso Black Cod",
-    image: "/img/miso-black-cod.jpg",
-  },
-  {
-    id: "aglio-e-olio",
-    title: "Aglio e Olio",
-    image: "/img/aglio-e-olio.jpg",
-  },
-  {
-    id: "chawanmushi",
-    title: "Chawanmushi",
-    image: "/img/chawanmushi.jpg",
-  },
-];
+import { getAllRecipes } from "@/lib/recipes";
 
 const PAGE_SIZE = 4;
 
 export default function RecipesPage() {
-  const [page, setPage] = useState(0);
-
-  const start = page * PAGE_SIZE;
-  const visibleRecipes = RECIPES.slice(start, start + PAGE_SIZE);
+  const recipes = getAllRecipes();
+  const visibleRecipes = recipes.slice(0, PAGE_SIZE);
 
   return (
     <>
@@ -53,24 +25,12 @@ export default function RecipesPage() {
 
         <section className="recipes-grid">
           {visibleRecipes.map((recipe) => (
-            <div key={recipe.id} className="recipe-card">
+            <div key={recipe.slug} className="recipe-card">
               <img src={recipe.image} alt={recipe.title} />
               <p>{recipe.title}</p>
             </div>
           ))}
         </section>
-
-        <div className="recipes-nav">
-          <button onClick={() => setPage((p) => p - 1)} disabled={page === 0}>
-            ←
-          </button>
-          <button
-            onClick={() => setPage((p) => p + 1)}
-            disabled={start + PAGE_SIZE >= RECIPES.length}
-          >
-            →
-          </button>
-        </div>
       </main>
     </>
   );
