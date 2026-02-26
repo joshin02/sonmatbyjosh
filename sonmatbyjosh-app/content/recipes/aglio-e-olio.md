@@ -16,18 +16,25 @@ media:
     type: image
   - type: video
     url: https://youtube.com/shorts/1wbfUjTyGro?feature=share
+    file: /uploads/img-3859.mp4
   - type: video
     url: https://youtube.com/shorts/t7LcZgC1mBU?feature=share
+    file: /uploads/img-3862.mp4
   - type: video
     url: https://youtube.com/shorts/qV_KgDWBVYE?feature=share
+    file: /uploads/img-3865.mp4
   - type: video
     url: https://youtube.com/shorts/yZJcjZ6dpKs?feature=share
+    file: /uploads/img-3868.mp4
   - type: video
     url: https://youtube.com/shorts/aQRkHQTNgBU?feature=share
+    file: /uploads/img-3869-1-.mp4
   - type: video
     url: https://youtube.com/shorts/5pIxMcKlrR4?feature=share
+    file: /uploads/img-3869.mp4
   - type: video
     url: https://youtube.com/shorts/uu1zOESGLyw?feature=share
+    file: /uploads/img-3870.mp4
 ingredients:
   - Olive oil
   - Crushed red peppers
