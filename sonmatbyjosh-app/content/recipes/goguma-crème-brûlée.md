@@ -1,5 +1,5 @@
 ---
-title: Goguma Crème brûlée
+title: goguma creme brulee
 image: /uploads/goguma-creme-brulee.jpeg
 intro: >
   Crème brûlée is a popular dessert, consisting of a custard base with
