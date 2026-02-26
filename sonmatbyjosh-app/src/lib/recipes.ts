@@ -6,7 +6,7 @@ const recipesDir = path.join(process.cwd(), "content/recipes");
 
 export type RecipeMedia =
   | { type: "image"; src: string; alt?: string }
-  | { type: "video"; url: string; alt?: string };
+  | { type: "video"; file: string; alt?: string };
 
 export type Recipe = {
   slug: string;
@@ -43,8 +43,8 @@ function normalizeMedia(field: any): RecipeMedia[] {
         return { type: "image", src: m.src.trim(), alt: m.alt?.trim?.() || undefined } as RecipeMedia;
       }
 
-      if (m.type === "video" && typeof m.url === "string" && m.url.trim()) {
-        return { type: "video", url: m.url.trim(), alt: m.alt?.trim?.() || undefined } as RecipeMedia;
+      if (m.type === "video" && typeof m.file === "string" && m.file.trim()) {
+        return { type: "video", file: m.file.trim(), alt: m.alt?.trim?.() || undefined } as RecipeMedia;
       }
 
       return null;

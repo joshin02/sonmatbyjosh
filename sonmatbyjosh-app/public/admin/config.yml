@@ -25,12 +25,12 @@ collections:
       - label: "Pics and Vids"
         name: "media"
         widget: "list"
-        hint: "Gallery content for the 'pics and vids' dropdown section."
+        hint: "Gallery items for the 'pics and vids' section. Images or uploaded MP4 videos."
         summary: "{{fields.type}}"
         fields:
           - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
           - { label: "Image", name: "src", widget: "image", required: false, hint: "Required if type = image" }
-          - { label: "Video URL", name: "url", widget: "string", required: false, hint: "Required if type = video (YouTube/Vimeo/etc)" }
+          - { label: "Video (MP4)", name: "file", widget: "file", required: false, hint: "Required if type = video. Upload an .mp4 file." }
           - { label: "Alt Text", name: "alt", widget: "string", required: false }
 
       - label: "Ingredients"

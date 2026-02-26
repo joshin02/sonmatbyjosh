@@ -65,7 +65,7 @@ export default function RecipeDetailClient({ recipe }: { recipe: Recipe }) {
         {/* pics and vids */}
         {active === "pics" && (
           <div className="recipe-detail-pics">
-            <div className="recipes-grid recipe-detail-grid">
+            <div className="recipe-gallery-grid">
               {media.length === 0 ? (
                 <div className="recipe-detail-empty">
                   <p>Media coming soon.</p>
@@ -74,29 +74,35 @@ export default function RecipeDetailClient({ recipe }: { recipe: Recipe }) {
                 media.map((m, idx) => {
                   if (m.type === "image") {
                     return (
-                      <div key={idx} className="recipe-card">
-                        <img src={m.src} alt={m.alt ?? recipe.title} />
-                        <p>{recipe.title}</p>
+                      <div key={idx} className="recipe-gallery-item">
+                        <div className="recipe-gallery-frame">
+                          <img src={m.src} alt={m.alt ?? recipe.title} />
+                        </div>
                       </div>
                     );
                   }
 
-                  // video (simple link card for now)
+                  // MP4 video (uploaded via Decap) - loop, muted, no controls
                   return (
-                    <a
-                      key={idx}
-                      className="recipe-detail-video-card"
-                      href={m.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <div className="recipe-detail-video-inner">
-                        <p className="recipe-detail-video-title">
-                          {m.alt ?? "Video"}
-                        </p>
-                        <p className="recipe-detail-video-url">{m.url}</p>
+                    <div key={idx} className="recipe-gallery-item">
+                      <div className="recipe-gallery-frame">
+                        <video
+                          src={m.file}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          controls={false}
+                          preload="metadata"
+                        />
                       </div>
-                    </a>
+
+                      {m.alt?.trim() ? (
+                        <p className="recipe-detail-video-caption">
+                          {m.alt.trim()}
+                        </p>
+                      ) : null}
+                    </div>
                   );
                 })
               )}
