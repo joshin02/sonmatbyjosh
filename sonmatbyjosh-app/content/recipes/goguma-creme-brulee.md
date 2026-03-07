@@ -1,6 +1,6 @@
 ---
 title: goguma creme brulee
-image: /uploads/goguma-creme-brulee.jpeg
+image: /uploads/aglio-e-olio.jpg
 intro: >
   Crème brûlée is a popular dessert, consisting of a custard base with
   caramelized sugar on top. My version doesn’t require any baking so you don’t
@@ -8,6 +8,15 @@ intro: >
   unlike the traditional dessert, I use goguma (Korean sweet potatoes) which
   gives it a unique sweet and nutty flavor. You can use either Korean sweet
   potatoes or if you want some color, purple sweet potatoes taste good as well!
+media:
+  - type: video
+    file: /uploads/a1d57cbe-72be-4884-8830-c69e230592b6.mp4
+  - type: video
+    file: /uploads/2b5da085-83c2-48f0-9db2-0a490f96a7cf.mp4
+  - type: video
+    file: /uploads/a58e3ea0-9c07-47d1-9c94-a09c2e1c501a.mp4
+  - type: video
+    file: /uploads/1b6166a0-8e7c-410d-a307-343a006bf9a1.mp4
 ingredients:
   - eggs
   - milk
