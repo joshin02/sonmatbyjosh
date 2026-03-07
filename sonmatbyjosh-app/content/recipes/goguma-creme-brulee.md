@@ -1,6 +1,6 @@
 ---
 title: goguma creme brulee
-image: /uploads/aglio-e-olio.jpg
+image: /uploads/img_3935.jpg
 intro: >
   Crème brûlée is a popular dessert, consisting of a custard base with
   caramelized sugar on top. My version doesn’t require any baking so you don’t
