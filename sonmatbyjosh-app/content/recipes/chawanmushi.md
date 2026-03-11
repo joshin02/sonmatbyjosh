@@ -1,6 +1,6 @@
 ---
 title: chawanmushi
-image: /uploads/chawanmushi.jpg
+image: /uploads/img_4001.jpeg
 intro: Chawanmushi is a Japanese steamed egg custard that is super soft, very
   similar to soondoobu texture. It’s super versatile in what you can add as
   toppings. The first time I tried chawanmushi was back in 2021 when I lived in
@@ -10,6 +10,17 @@ intro: Chawanmushi is a Japanese steamed egg custard that is super soft, very
   will make or break the dish so I wouldn’t say it’s the simplest recipe but
   definitely not difficult if you follow the recipe to a tea (no pun intended).
   Once you get the ratio down, feel free to play with various toppings!
+media:
+  - type: video
+    file: /uploads/b08805bb-15d6-47d4-891f-1b54f69289dc.mp4
+  - type: video
+    file: /uploads/7ae366c4-4218-4cc0-9888-00ff5c1f475f.mp4
+  - type: video
+    file: /uploads/be2c4f6a-a390-44e3-a48b-2c83da79e889.mp4
+  - type: video
+    file: /uploads/95bba084-e3ae-4a0d-a97e-69809ea75b97.mp4
+  - type: image
+    src: /uploads/img_3998.jpeg
 ingredients:
   - eggs
   - green onion
