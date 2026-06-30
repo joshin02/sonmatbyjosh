@@ -8,8 +8,8 @@ intro: Chawanmushi is a Japanese steamed egg custard that is super soft, very
   doesn’t even taste like eggs??? The taste really depends on the toppings, but
   generally it has a seafood profile from the dashi. The ratio of egg to dashi
   will make or break the dish so I wouldn’t say it’s the simplest recipe but
-  definitely not difficult if you follow the recipe to a tea (no pun intended).
-  Once you get the ratio down, feel free to play with various toppings!
+  definitely not difficult if you follow the recipe. Once you get the ratio
+  down, feel free to play with various toppings!
 media:
   - type: video
     file: /uploads/b08805bb-15d6-47d4-891f-1b54f69289dc.mp4
