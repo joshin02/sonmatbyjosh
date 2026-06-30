@@ -766,3 +766,39 @@ a {
     max-width: 150px;
   }
 }
+
+.home-illustration {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.chef-image {
+  display: block;
+  width: 320px;
+  height: auto;
+}
+
+.utensil-flip {
+  position: absolute;
+  width: 55px;
+  left: 17%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: utensilFlip 1s ease-in-out forwards;
+}
+
+@keyframes utensilFlip {
+  0% {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  50% {
+    transform: translate(-50%, -180%) rotate(120deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}

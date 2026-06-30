@@ -7,7 +7,7 @@ export default function BlogPage() {
 
       <main className="coming-soon">
         <h1>Cooking this page up! Check back in a bit</h1>
-        <img src="/img/placeholder.jpg" alt='placeholder' />
+        <img src="/img/pan-flip.gif" alt='placeholder' />
       </main>
     </>
   );
