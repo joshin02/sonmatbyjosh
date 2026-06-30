@@ -30,7 +30,10 @@ export const metadata = {
   title: "SonMat by Josh",
   description: "Recipes, reviews, and stories.",
   icons: {
-    icon: "/icons/josh.png",
+      icon: [
+    { url: "/icons/josh.ico" },
+    { url: "/icons/josh.png", type: "image/png" },
+  ],
   },
 };
 
